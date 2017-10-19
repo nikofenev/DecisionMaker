@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JokeOfTheDay.iml" filepath="$PROJECT_DIR$/JokeOfTheDay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DecisionMaker.iml" filepath="$PROJECT_DIR$/DecisionMaker.iml" />
     </modules>
   </component>
 </project>
