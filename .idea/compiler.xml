@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="DecisionMaker" />
         <module name="JokeOfTheDay" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="DecisionMaker" target="1.5" />
       <module name="JokeOfTheDay" target="1.5" />
     </bytecodeTargetLevel>
   </component>
