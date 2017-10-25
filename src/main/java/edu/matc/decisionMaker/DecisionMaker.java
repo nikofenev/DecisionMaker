@@ -1,14 +1,14 @@
 package edu.matc.decisionMaker;
 
-    import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;
 
-    import javax.ws.rs.GET;
-    import javax.ws.rs.Path;
-    import javax.ws.rs.PathParam;
-    import javax.ws.rs.Produces;
-    import javax.ws.rs.core.Response;
-    import java.util.ArrayList;
-    import java.util.List;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Path("/decision")
