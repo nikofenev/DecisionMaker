@@ -31,6 +31,7 @@
 # IntelliJ
 /out/
 DecisionMaker.iml
+.idea/
 
 # Maven
 /target/
