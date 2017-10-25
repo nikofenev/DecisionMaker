@@ -30,6 +30,7 @@
 
 # IntelliJ
 /out/
+DecisionMaker.iml
 
 # Maven
 /target/
