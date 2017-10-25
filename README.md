@@ -15,4 +15,4 @@ crudeness in the answer, or an indecisive answer to give it to someone you don't
  irritated-ness to the answer if your not feeling what you are doing or don't again want to talk to someone.
  
 # Sample widget implementation  
-![Sample Widget]("/home/student/IntellijProjects/DecisionMaker/images/widget.png")
+![alt text](https://github.com/MadJavaEntFall2017/DecisionMaker/blob/master/images/widget.png "Sample Widget")
