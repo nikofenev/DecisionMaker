@@ -14,5 +14,7 @@ but there's a kick, in our we have three choices to add to your decision to make
 crudeness in the answer, or an indecisive answer to give it to someone you don't like or don't want to talk to. Lastly you can add a little
  irritated-ness to the answer if your not feeling what you are doing or don't again want to talk to someone.
  
+### [Project Plan](projectPlan.md)
+ 
 # Sample widget implementation  
 ![Sample Widget]("/home/student/IntellijProjects/DecisionMaker/images/widget.png")
