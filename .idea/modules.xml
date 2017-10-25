@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DecisionMaker.iml" filepath="$PROJECT_DIR$/DecisionMaker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DesisionMaker.iml" filepath="$PROJECT_DIR$/DesisionMaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DecisionMaker.iml" filepath="$PROJECT_DIR$/DecisionMaker.iml" />
     </modules>
   </component>
 </project>
