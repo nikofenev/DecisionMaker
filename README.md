@@ -17,4 +17,4 @@ crudeness in the answer, or an indecisive answer to give it to someone you don't
 ### [Project Plan](projectPlan.md)
  
 # Sample widget implementation  
-![Sample Widget]("/home/student/IntellijProjects/DecisionMaker/images/widget.png")
+![alt text](https://github.com/MadJavaEntFall2017/DecisionMaker/blob/master/images/widget.png "Sample Widget")
