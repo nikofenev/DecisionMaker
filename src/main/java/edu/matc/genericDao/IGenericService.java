@@ -1,0 +1,1 @@
+package edu.matc.genericDao;import java.util.List;public interface IGenericService<T> extends IGenericDAO<T> {    List<T> getAll();    void deleteAll();}
