@@ -1,0 +1,16 @@
+<!-- put this code in a CSS file and link to it -->
+
+#decisionMakerWell {
+    min-width: 215px;
+    background-color: #e0f4fe;
+}
+
+#answerContainer {
+    margin-top: .75em;
+    padding: .5em 1em .5em 1em;
+    background-color: #d9d9d9;
+}
+
+#userProblem {
+    text-align: center;
+}
