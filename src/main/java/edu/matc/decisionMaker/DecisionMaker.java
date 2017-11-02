@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.*;
 
 
-@Path("/decision")
+@Path("/decisions")
 public class DecisionMaker {
     private final Logger LOGGER = Logger.getLogger(this.getClass());
     IGenericService<Answer> answerService;
