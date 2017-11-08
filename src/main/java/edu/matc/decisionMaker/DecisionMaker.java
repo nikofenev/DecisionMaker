@@ -5,9 +5,8 @@ import edu.matc.genericDao.HibernateUtil;
 import edu.matc.genericDao.IGenericService;
 import org.apache.log4j.Logger;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
 
@@ -24,6 +23,7 @@ public class DecisionMaker {
         @PathParam("crude") String statusCrudeFilter,
         @PathParam("decisive") String statusIndecisiveFilter,
         @PathParam("happy") String statusIrritatedFilter) {
+
 
         answerService = new GenericServiceImpl<>(
             Answer.class, HibernateUtil.getSessionFactory());

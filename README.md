@@ -20,3 +20,24 @@ crudeness in the answer, or an indecisive answer to give it to someone you don't
  
 # Sample widget implementation  
 ![alt text](https://github.com/MadJavaEntFall2017/DecisionMaker/blob/master/images/widget.png "Sample Widget")
+
+# Widget Use Instructions
+Widget General Overview -- all necessary parts to run the Decision Maker on your web page are included in the 'UI_parts' 
+folder in this repository. The design of the widget will work on all web pages regardless of the server-side language used. 
+All calls are made and received through JavaScript.
+
+Step 1: Add the required links for Bootstrap and jQuery libraries. These links are included in the 'CDN_includesForUI.txt' file. 
+Add the code lines to head section of any page intended to include the Decision Maker widget.
+
+Step 2: Add the HTML div containing the widget code to your web page. The code for this div is in the file 'UserInterfaceCode.txt'.
+The div is bootstrap responsive.
+
+Step 3: Add some minor CSS code for the widget. This code is in the 'customCssForUI.txt'. To use the code, create a file
+called decisionMaker.css in a folder called css.
+
+Step 4: Add the JavaScript required to access the Decision Maker API. This code is in the 'RequiredJavaScript.txt' file. To use the code, 
+create a Javascript file called 'decisionMaker.js' inside a folder named 'js'. Paste the Javascript code in the file.
+
+Step 5: Enjoy a life of easy decision making. Once the preceding four steps are complete you are ready to go. Use the Decision Maker to make your 
+life easier--and totally mindless. Just remember, the Decision Maker is for entertainment purposes only. Even though the creators of
+fully believe in the quality of the advice given by the Decision Maker, we take no responsibly for any mishaps caused in part or in whole by its use--or misuse.  
