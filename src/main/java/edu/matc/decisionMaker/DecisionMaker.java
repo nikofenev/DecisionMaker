@@ -24,7 +24,6 @@ public class DecisionMaker {
         @PathParam("decisive") String statusIndecisiveFilter,
         @PathParam("happy") String statusIrritatedFilter) {
 
-
         answerService = new GenericServiceImpl<>(
             Answer.class, HibernateUtil.getSessionFactory());
 
@@ -37,6 +36,7 @@ public class DecisionMaker {
 
         Random randomizer = new Random();
         Answer random = answer.get(randomizer.nextInt(answer.size()));
+
 
         return Response.status(200).entity(random.getAnswer()).build();
     }
