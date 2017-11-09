@@ -64,6 +64,12 @@ public class DecisionMaker {
         return null;
     }
 
+    @GET
+    @Path("/")
+    public Response getDecisionParameters() {
+        return Response.status(200).entity("hello!").build();
+    }
+
 
 }
 
