@@ -8,7 +8,9 @@ import org.apache.log4j.Logger;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.util.*;
 
 
@@ -39,6 +41,19 @@ public class DecisionMaker {
         Answer random = answer.get(randomizer.nextInt(answer.size()));
 
         return Response.status(200).entity(random.getAnswer()).build();
+    }
+
+    @GET
+    @Path("/query")
+    public Response getDecisionValues(@Context UriInfo info) {
+
+        String isCrude = info.getQueryParameters().getFirst("isCrude");
+        String isIndecisive = info.getQueryParameters().getFirst("isIndecisive");
+        String isIrritated = info.getQueryParameters().getFirst("isIrritated");
+
+        return Response.status(200).entity("isCrude: " + isCrude
+                    + " isIndecisive: " + isIndecisive
+                    + " isIrritated: " + isIrritated).build();
     }
 
 }
