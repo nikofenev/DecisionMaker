@@ -9,6 +9,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.*;
@@ -43,18 +45,7 @@ public class DecisionMaker {
         return Response.status(200).entity(random.getAnswer()).build();
     }
 
-    @GET
-    @Path("/query")
-    public Response getDecisionValues(@Context UriInfo info) {
-
-        String isCrude = info.getQueryParameters().getFirst("isCrude");
-        String isIndecisive = info.getQueryParameters().getFirst("isIndecisive");
-        String isIrritated = info.getQueryParameters().getFirst("isIrritated");
-
-        return Response.status(200).entity("isCrude: " + isCrude
-                    + " isIndecisive: " + isIndecisive
-                    + " isIrritated: " + isIrritated).build();
-    }
 
 }
 
+// adding this line just to test changes
