@@ -26,7 +26,6 @@ public class DecisionMaker {
             @PathParam("happy") String statusIrritatedFilter,
             @PathParam("dataType") String dataType) {
 
-
         answerService = new GenericServiceImpl<>(
                 Answer.class, HibernateUtil.getSessionFactory());
 
@@ -39,6 +38,7 @@ public class DecisionMaker {
 
         Random randomizer = new Random();
         Answer random = answer.get(randomizer.nextInt(answer.size()));
+
 
         if (dataType.equalsIgnoreCase("json")) {
             String jsonString = new JSONObject().put("JSON1", new JSONObject().put("answer", random.getAnswer())).toString();
@@ -60,8 +60,8 @@ public class DecisionMaker {
             return Response.status(200).entity(random.getAnswer()).build();
         }
 
-
         return null;
+
     }
 
     @GET
