@@ -12,7 +12,7 @@
 </head>
     <body>
         <p>You entered the wrong path, try this</p>
-        <a href="/index.jsp">click here to figure out how to use this</a>
+        <a href="http://18.220.32.132:8080/decisionMaker/">click here to figure out how to use this</a>
 
     </body>
 </html>
