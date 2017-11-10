@@ -44,7 +44,7 @@
         </div>
 
         <h1>Welcome to the Decision Maker Web API</h1>
-        <h2>We do the <span class="rotating">thinking </span> for you</h2>
+        <h2>We do the <span class="rotating">thinking, work, decision making </span> for you</h2>
         <div class="actions">
           <a href="#about" class="btn-get-started">About the Team</a>
           <a href="#services" class="btn-services">API Instructions</a>

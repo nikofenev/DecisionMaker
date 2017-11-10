@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name="decisions")
-public class Answer {
+public class Decision {
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -20,22 +20,23 @@ public class Answer {
     String answer;
 
     @Column(name="crude")
-    boolean isCrude;
+    String crude;
+
 
     @Column(name="indecisive")
-    boolean isIndecisive;
+    String indecisive;
 
     @Column(name="irritated")
-    boolean isIrritated;
+    String irritated;
 
-    public Answer(){
+    public Decision(){
     }
 
-    public Answer(String answer, boolean isCrude, boolean isIndecisive, boolean isIrritated) {
+    public Decision(String answer, String crude, String indecisive, String irritated) {
         this.answer = answer;
-        this.isCrude = isCrude;
-        this.isIndecisive = isIndecisive;
-        this.isIrritated = isIrritated;
+        this.crude = crude;
+        this.indecisive = indecisive;
+        this.irritated = irritated;
     }
 
     public int getiD() {
@@ -54,28 +55,28 @@ public class Answer {
         this.answer = answer;
     }
 
-    public boolean isCrude() {
-        return isCrude;
+    public String getCrude() {
+        return crude;
     }
 
-    public void setCrude(boolean crude) {
-        isCrude = crude;
+    public void setCrude(String crude) {
+        this.crude = crude;
     }
 
-    public boolean isIndecisive() {
-        return isIndecisive;
+    public String getIndecisive() {
+        return indecisive;
     }
 
-    public void setIndecisive(boolean indecisive) {
-        isIndecisive = indecisive;
+    public void setIndecisive(String indecisive) {
+        this.indecisive = indecisive;
     }
 
-    public boolean isIrritated() {
-        return isIrritated;
+    public String getIrritated() {
+        return irritated;
     }
 
-    public void setIrritated(boolean irritated) {
-        isIrritated = irritated;
+    public void setIrritated(String irritated) {
+        this.irritated = irritated;
     }
 
     @Override
@@ -83,9 +84,9 @@ public class Answer {
         return "Answer{" +
                 "iD=" + iD +
                 ", answer='" + answer + '\'' +
-                ", isCrude=" + isCrude +
-                ", isIndecisive=" + isIndecisive +
-                ", isIrritated=" + isIrritated +
+                ", crude='" + crude + '\'' +
+                ", indecisive='" + indecisive + '\'' +
+                ", irritated='" + irritated + '\'' +
                 '}';
     }
 }
