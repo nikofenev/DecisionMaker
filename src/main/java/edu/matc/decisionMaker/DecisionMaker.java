@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
 
@@ -15,7 +14,7 @@ import java.util.*;
 @Path("/decisions")
 public class DecisionMaker {
     private final Logger LOGGER = Logger.getLogger(this.getClass());
-    IGenericService<Answer> answerService;
+    IGenericService<Decision> answerService;
 
     // The Java method will process HTTP GET requests
     @GET
@@ -27,49 +26,48 @@ public class DecisionMaker {
             @PathParam("dataType") String dataType) {
 
         answerService = new GenericServiceImpl<>(
-                Answer.class, HibernateUtil.getSessionFactory());
+                Decision.class, HibernateUtil.getSessionFactory());
 
         Map<String, Object> params = new HashMap<>();
 
-        String sqlQuery = "from decisions where isCrude='" + statusCrudeFilter + "' and isIndecisive='"
-                + statusIndecisiveFilter + "' and isIrritated='" + statusIrritatedFilter + "'";
+        // special secret code to allow inserting of decisions
+        if (!dataType.equalsIgnoreCase("json") & !dataType.equalsIgnoreCase("xml") & !dataType.equalsIgnoreCase("html") & !dataType.equalsIgnoreCase("plaintext")) {
+            String decision = dataType;
+            Decision newDecision = new Decision(decision, statusCrudeFilter, statusIndecisiveFilter, statusIrritatedFilter);
+            answerService.save(newDecision);
+        } else {
 
-        List<Answer> answer = answerService.query(sqlQuery, params);
+            String sqlQuery = "from decisions where crude='" + statusCrudeFilter + "' and indecisive='"
+                    + statusIndecisiveFilter + "' and irritated='" + statusIrritatedFilter + "'";
 
-        Random randomizer = new Random();
-        Answer random = answer.get(randomizer.nextInt(answer.size()));
+            List<Decision> decisions = answerService.query(sqlQuery, params);
+
+            Random randomizer = new Random();
+            Decision random = decisions.get(randomizer.nextInt(decisions.size()));
 
 
-        if (dataType.equalsIgnoreCase("json")) {
-            String jsonString = new JSONObject().put("JSON1", new JSONObject().put("answer", random.getAnswer())).toString();
+            if (dataType.equalsIgnoreCase("json")) {
+                String jsonString = new JSONObject().put("JSON1", new JSONObject().put("answer", random.getAnswer())).toString();
 
-            return Response.status(200).entity(jsonString).build();
+                return Response.status(200).entity(jsonString).build();
+
+            }
+            if (dataType.equalsIgnoreCase("html")) {
+                String html = "<html> " + "<title>" + "Decision Maker Answer" + "</title>"
+                        + "<body><h1>" + random.getAnswer() + "</h1></body>" + "</html> ";
+                return Response.status(200).entity(html).build();
+            }
+            if (dataType.equalsIgnoreCase("xml")) {
+                String xml = "<answer>" + random.getAnswer() + "</answer>";
+
+                return Response.status(200).entity(xml).build();
+            }
+            if (dataType.equalsIgnoreCase("plaintext")) {
+                return Response.status(200).entity(random.getAnswer()).build();
+            }
 
         }
-        if (dataType.equalsIgnoreCase("html")) {
-            String html = "<html> " + "<title>" + "Decision Maker Answer" + "</title>"
-                    + "<body><h1>" + random.getAnswer() + "</h1></body>" + "</html> ";
-            return Response.status(200).entity(html).build();
-        }
-        if (dataType.equalsIgnoreCase("xml")) {
-            String xml = "<answer>" + random.getAnswer() + "</answer>";
-
-            return Response.status(200).entity(xml).build();
-        }
-        if (dataType.equalsIgnoreCase("plaintext")) {
-            return Response.status(200).entity(random.getAnswer()).build();
-        }
-
         return null;
-
     }
-
-    @GET
-    @Path("/")
-    public Response getDecisionParameters() {
-        return Response.status(200).entity("hello!").build();
-    }
-
-
 }
 
