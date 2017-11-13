@@ -27,7 +27,8 @@
         -->
 
         <!-- List the annotated entity class/es -->
-        <mapping class="edu.matc.decisionMaker.Answer"/>
+        <mapping class="edu.matc.decisionMaker.Decision"/>
+
 
     </session-factory>
 
