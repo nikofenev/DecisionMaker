@@ -11,12 +11,24 @@ import javax.ws.rs.core.Response;
 import java.util.*;
 
 
+/**
+ * The Decision maker class.
+ */
 @Path("/decisions")
 public class DecisionMaker {
     private final Logger LOGGER = Logger.getLogger(this.getClass());
+
     IGenericService<Decision> answerService;
 
-    // The Java method will process HTTP GET requests
+    /**
+     * Gets decision parameters. Processes HTTP GET requests.
+     *
+     * @param statusCrudeFilter      the status crude filter
+     * @param statusIndecisiveFilter the status indecisive filter
+     * @param statusIrritatedFilter  the status irritated filter
+     * @param dataType               the data type
+     * @return the decision responses
+     */
     @GET
     @Path("{crude}/{decisive}/{happy}/{dataType}")
     public Response getDecisionParameters(
@@ -31,7 +43,10 @@ public class DecisionMaker {
         Map<String, Object> params = new HashMap<>();
 
         // special secret code to allow inserting of decisions
-        if (!dataType.equalsIgnoreCase("json") & !dataType.equalsIgnoreCase("xml") & !dataType.equalsIgnoreCase("html") & !dataType.equalsIgnoreCase("plaintext")) {
+        if (!dataType.equalsIgnoreCase("json")
+                    & !dataType.equalsIgnoreCase("xml")
+                    & !dataType.equalsIgnoreCase("html")
+                    & !dataType.equalsIgnoreCase("plaintext")) {
             String decision = dataType;
             Decision newDecision = new Decision(decision, statusCrudeFilter, statusIndecisiveFilter, statusIrritatedFilter);
             answerService.save(newDecision);
